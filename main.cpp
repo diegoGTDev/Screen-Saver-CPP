@@ -10,16 +10,16 @@ void printCloud(int x,int y){
                          "(_   _    _)",
                          "  (_) (__)"};
     for (int i = 0; i < 4; ++i) {
-        gotoxy(x, 5+i);
+        gotoxy(x, 6+i);
         cout<<cloud[i];
     }
     Sleep(100);
     for (int i = 0; i < 4; ++i) {
-        gotoxy(x, 5+i);
+        gotoxy(x, 6+i);
         cout<<"            ";
     }
     Sleep(100);
-    if (x > 5){
+    if (x > 6){
         printCloud(x-1, y);
     }
     return;
@@ -61,9 +61,9 @@ int main() {
     while(!kbhit()){
         nombre = nombres[counter];
         system(colores[rand()%7]);
-        dibujar(nombre);
-        printPlayer();
-        printCloud(max_x-12, max_y);
+        //dibujar(nombre);
+        //printPlayer();
+        printCloud(max_x-17, max_y);
         counter++;
         if (counter == 3){
             counter = 0;
