@@ -1,4 +1,4 @@
-#include "funciones.h"
+#include "funciones_basicas.h"
 #include <iostream>
 #include <windows.h>
 using namespace std;
