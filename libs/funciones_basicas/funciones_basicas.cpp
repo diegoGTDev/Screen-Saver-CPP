@@ -36,27 +36,7 @@ void escribir(int x,int y, int time, char* w){
     Sleep(time);
 }
 
-void dibujar(char* w){
-    int x = 6;
-    int y = 6;
-    int time = TIME;
-    for(int i = 0; i < 40; i++){
-        escribir(x,y,time, w);
-        x++;
-    }
-    for (int i = 0; i <25; ++i) {
-        escribir(x,y,time, w);
-        y++;
-    }
-    for (int i = 0; i < 40; ++i) {
-        escribir(x,y,time, w);
-        x--;
-    }
-    for (int i = 0; i < 25; ++i) {
-        escribir(x,y,time, w);
-        y--;
-    }
-}
+
 //Funcion para imprimir el margen
 void imprimir(int x, int y, char* w){
     const int _TIME = 0.999;
