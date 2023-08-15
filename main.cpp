@@ -32,22 +32,22 @@ int main() {
     dibujarMargen(0,0, _MAX_X, _MAX_Y);
     NUBE nube(_MAX_X_MARCO-9, _MIN_Y_MARCO);
     ROCA roca(_MAX_X_MARCO, _MAX_Y_MARCO);
-    JUGADOR jugador(_MIN_X_MARCO+190, _MAX_Y_MARCO-1);
+    JUGADOR jugador(_MIN_X_MARCO+190, _MAX_Y_MARCO);
     gotoxy(50, 56);
     cout <<"caca";
     getch();
     nube.dibujar();
     roca.dibujar();
     jugador.dibujar();
-    while(!kbhit()){
+    while(true){
         //nombre = nombres[counter];
         //system(colores[rand()%7]);
         //dibujar(nombre);
-         roca.mover();
-        // nube.mover();
-        jugador.estaSaltando();
+        roca.mover();
+        nube.mover();
+        jugador.caer();
         jugador.preColision(roca);
-        Sleep(300);
+        Sleep(_TIME);
         counter++;
         if (counter == 3){
             counter = 0;

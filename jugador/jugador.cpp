@@ -6,12 +6,14 @@
 #include <windows.h>
 #include<conio.h>
 const int NIVEL_TIERRA = MAX_Y_MARCO;
+
+
 void JUGADOR::dibujar(){
-    char* jugador[2] = {"o","|"};
+    char* jugador[2] = {"|","O"};
 
     for (int j = 0; j<2; j++){
-        gotoxy(x,y+j);
-        std::cout << jugador[j];
+        gotoxy(x,y-j);
+        std::cout << jugador[j];s
     }
 
 }
@@ -21,29 +23,44 @@ void JUGADOR::mover(){
         std::cout << " ";
     }
     x++;
+    dibujar();
 }
 
 void JUGADOR::caer(){
-    for (int k = 0; k<2; k++){
-        gotoxy(x,y+k);
-        std::cout << " ";
+
+    if(estaEnElAire){
+        for (int k = 0; k<2; k++){
+            gotoxy(x,y-k);
+            std::cout << " ";
+        }
+        y += dy;
+        gotoxy(5,5);
+        std::cout<<"Y ES: "<<y;
+        dibujar();
+        dy += 1;
+        if (y >= 56){
+            y = 56;
+            dy = 0;
+            estaEnElAire = false;
+                    for (int k = 0; k<2; k++){
+            gotoxy(x,y-k);
+            std::cout << " ";
+        }         
+            dibujar();
+        }
     }
-    y++;
-    dibujar();
+
 
 }
 
 void JUGADOR::saltar(){
-    for (int k = 0; k<2; k++){
-        gotoxy(x,y+k);
-        std::cout << " ";
+    if (!estaEnElAire){        
+        dy = -2;
+        estaEnElAire = true;
     }
-    y--;
-    dibujar();
 }
 void JUGADOR::preColision(struct ROCA &ROCA){
     if (x+1 >= ROCA.x && x < ROCA.x){
-        getch();
         saltar();
     }
 }
