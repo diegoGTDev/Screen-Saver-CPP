@@ -5,6 +5,7 @@
 #include<stdlib.h>
 #include "roca/roca.h"
 #include "nube/nube.h"
+#include "jugador/jugador.h"
 #include <windows.h>
 using namespace std;
 
@@ -31,15 +32,22 @@ int main() {
     dibujarMargen(0,0, _MAX_X, _MAX_Y);
     NUBE nube(_MAX_X_MARCO-9, _MIN_Y_MARCO);
     ROCA roca(_MAX_X_MARCO, _MAX_Y_MARCO);
+    JUGADOR jugador(_MIN_X_MARCO+190, _MAX_Y_MARCO-1);
+    gotoxy(50, 56);
+    cout <<"caca";
+    getch();
     nube.dibujar();
     roca.dibujar();
+    jugador.dibujar();
     while(!kbhit()){
         //nombre = nombres[counter];
         //system(colores[rand()%7]);
         //dibujar(nombre);
-        roca.mover();
-        nube.mover();
-        Sleep(_TIME);
+         roca.mover();
+        // nube.mover();
+        jugador.estaSaltando();
+        jugador.preColision(roca);
+        Sleep(300);
         counter++;
         if (counter == 3){
             counter = 0;

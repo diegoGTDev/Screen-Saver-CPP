@@ -2,9 +2,8 @@
 #include "./roca.h"
 #include<iostream>
 void ROCA::dibujar(){
-    const char rock[3] = "██";
     gotoxy(x, y);
-    std::cout<<rock;
+    printf("%c%c", 219, 220);
 
 }
 

@@ -5,5 +5,5 @@
 #define TIME 15;
 #define MAX_X_MARCO obtenerMedidasConsola()[0] - 8;
 #define MAX_Y_MARCO obtenerMedidasConsola()[1] - 6;
-#define MIN_X_MARCO 8;
+#define MIN_X_MARCO 6;
 #define MIN_Y_MARCO 6;
