@@ -13,5 +13,4 @@ class JUGADOR{
         void saltar();
         void caer();
         void preColision(struct ROCA &roca);
-        void estaSaltando();
 };

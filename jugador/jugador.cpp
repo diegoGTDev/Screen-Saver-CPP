@@ -34,8 +34,6 @@ void JUGADOR::caer(){
             std::cout << " ";
         }
         y += dy;
-        gotoxy(5,5);
-        std::cout<<"Y ES: "<<y;
         dibujar();
         dy += 1;
         if (y >= NIVEL_TIERRA){
@@ -65,9 +63,3 @@ void JUGADOR::preColision(struct ROCA &ROCA){
     }
 }
 
-void JUGADOR::estaSaltando(){
-
-    if (y != 55 ){
-        caer();
-    }
-}

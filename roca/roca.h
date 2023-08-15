@@ -1,12 +1,7 @@
-class ROCA{
-  
-
+#include "../objeto/objeto.h"
+class ROCA: public OBJETO{ 
   public:
-  int x, y;
-    ROCA(int _x, int _y){
-      x = _x;
-      y = _y;
-    };
+    ROCA(int _x, int _y) : OBJETO(_x, _y){}
     void dibujar();
     void mover();  
 };
