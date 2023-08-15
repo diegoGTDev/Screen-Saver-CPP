@@ -13,7 +13,7 @@ void JUGADOR::dibujar(){
 
     for (int j = 0; j<2; j++){
         gotoxy(x,y-j);
-        std::cout << jugador[j];s
+        std::cout << jugador[j];
     }
 
 }
@@ -38,8 +38,8 @@ void JUGADOR::caer(){
         std::cout<<"Y ES: "<<y;
         dibujar();
         dy += 1;
-        if (y >= 56){
-            y = 56;
+        if (y >= NIVEL_TIERRA){
+            y = NIVEL_TIERRA;
             dy = 0;
             estaEnElAire = false;
                     for (int k = 0; k<2; k++){
