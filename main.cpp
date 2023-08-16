@@ -40,6 +40,7 @@ int main() {
     NUBE nube5(165, _MIN_Y_MARCO+5);
     NUBE nube6(70, _MIN_Y_MARCO+12);
     ROCA roca(_MAX_X_MARCO, _MAX_Y_MARCO);
+    ROCA roca2(_MAX_X_MARCO, _MAX_Y_MARCO);
     JUGADOR jugador(_MIN_X_MARCO+30, _MAX_Y_MARCO);
     //Nubes
     nube.dibujar();
@@ -50,11 +51,17 @@ int main() {
     nube6.dibujar();
     //Roca
     roca.dibujar();
+    
     //Jugador
     jugador.dibujar();
     while(true){
         roca.mover();
         roca.estaEnLimite();
+        roca2.crearOtraRoca(roca);
+        if (roca2.getState()){
+            roca2.mover();
+            roca2.estaEnLimite();
+        }
         nube.mover();
         nube2.mover();
         nube2.estaEnLimite();
@@ -68,6 +75,7 @@ int main() {
         nube6.estaEnLimite();
         nube.estaEnLimite();
         jugador.caer();
+        jugador.preColision(roca2);
         jugador.preColision(roca);
         Sleep(_TIME);
     }
