@@ -5,15 +5,14 @@
 #include "../libs/constantes.h"
 #include <windows.h>
 #include<conio.h>
-const int NIVEL_TIERRA = MAX_Y_MARCO;
 
 
 void JUGADOR::dibujar(){
     char* jugador[2] = {"|","O"};
-
     for (int j = 0; j<2; j++){
         gotoxy(x,y-j);
         std::cout << jugador[j];
+        
     }
 
 }
@@ -52,13 +51,14 @@ void JUGADOR::caer(){
 }
 
 void JUGADOR::saltar(){
-    if (!estaEnElAire){        
+    if (!estaEnElAire){      
         dy = -2;
         estaEnElAire = true;
     }
 }
 void JUGADOR::preColision(struct ROCA &ROCA){
-    if (x+1 >= ROCA.x && x < ROCA.x){
+    
+    if (x+1 >= ROCA.getX() && x < ROCA.getX()){
         saltar();
     }
 }

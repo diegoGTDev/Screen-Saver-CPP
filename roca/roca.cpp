@@ -4,6 +4,7 @@
 void ROCA::dibujar(){
     gotoxy(x, y);
     printf("%c%c", 219, 220);
+    // printf("%d", getX());
 
 }
 
@@ -12,7 +13,11 @@ void ROCA::mover(){
         return;
     }
     gotoxy(x, y);
-    std::cout<<"  ";
+    std::cout<<"   ";
     x--;
     dibujar();
+}
+
+int ROCA::getX(){
+    return x;
 }

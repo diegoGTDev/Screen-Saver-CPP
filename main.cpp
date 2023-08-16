@@ -33,9 +33,6 @@ int main() {
     NUBE nube(_MAX_X_MARCO-9, _MIN_Y_MARCO);
     ROCA roca(_MAX_X_MARCO, _MAX_Y_MARCO);
     JUGADOR jugador(_MIN_X_MARCO+190, _MAX_Y_MARCO);
-    gotoxy(50, 56);
-    cout <<"caca";
-    getch();
     nube.dibujar();
     roca.dibujar();
     jugador.dibujar();
