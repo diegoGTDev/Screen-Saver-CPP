@@ -1,17 +1,15 @@
 #include "../libs/funciones_basicas/funciones_basicas.h"
+#include "../libs/constantes.h"
 #include "./roca.h"
+#include "conio.h"
 #include<iostream>
 void ROCA::dibujar(){
     gotoxy(x, y);
     printf("%c%c", 219, 220);
-    // printf("%d", getX());
 
 }
 
 void ROCA::mover(){
-        if (x < 7){
-        return;
-    }
     gotoxy(x, y);
     std::cout<<"   ";
     x--;
@@ -20,4 +18,16 @@ void ROCA::mover(){
 
 int ROCA::getX(){
     return x;
+}
+
+void ROCA::estaEnLimite(){
+    const int limite = MIN_X_MARCO;
+    if (x >=limite && x <= limite){
+        gotoxy(x, y);
+        std::cout<<"  ";
+        if (x== limite){
+
+            x = inicialX;
+        }
+    }
 }
