@@ -5,7 +5,7 @@ c++.
 ## Mecánicas Interesantes
 - Movimiento de los objetos del juego
 - Salto
-- Caida
+- Caída
 - Colisiones
 
 ## Tecnologías aplicadas

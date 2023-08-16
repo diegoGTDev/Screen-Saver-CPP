@@ -52,7 +52,7 @@ void JUGADOR::caer(){
 
 void JUGADOR::saltar(){
     if (!estaEnElAire){      
-        dy = -2;
+        dy = -3;
         estaEnElAire = true;
     }
 }

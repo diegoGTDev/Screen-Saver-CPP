@@ -1,9 +1,13 @@
+#include "../libs/constantes.h"
 class NUBE{
     int x, y;
-    int inicialX, inicialY;
+    int max_x_marco = MAX_X_MARCO;
+    int inicialX = max_x_marco-9;
+    int inicialY;
+    
 
     public:
-        NUBE(int _x, int _y) : x(_x) , y(_y), inicialX(_x), inicialY(_y) {}
+        NUBE(int _x, int _y) : x(_x) , y(_y), inicialY(_y) {}
         void dibujar();
         void mover();
         void estaEnLimite();

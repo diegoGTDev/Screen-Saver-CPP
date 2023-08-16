@@ -1,6 +1,7 @@
 #include "funciones_basicas.h"
 #include <iostream>
 #include <windows.h>
+#include "../constantes.h"
 using namespace std;
 int* obtenerMedidasConsola(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -27,13 +28,32 @@ void gotoxy(int x,int y)
     SetConsoleCursorPosition(hcon,dwPos);
 
 }
-void escribir(int x,int y, int time, char* w){
-    gotoxy(x, y);
-    cout<<w;
-    Sleep(time);
-    gotoxy(x,y);
-    cout<<"      ";
-    Sleep(time);
+
+
+void escribirAlgoritmos(){
+    const char* palabra[11] = {
+        "          $$\\                               $$\\   $$\\                                ",
+"          $$ |                              \\__|  $$ |         ",  
+" $$$$$$\\  $$ | $$$$$$\\   $$$$$$\\   $$$$$$\\  $$\\ $$$$$$\\   $$$$$$\\$$$$\\   $$$$$$\\   $$$$$$$\\ ",   
+" \\____$$\\ $$ |$$  __$$\\ $$  __$$\\ $$  __$$\\ $$ |\\_$$  _|  $$  _$$  _$$\\ $$  __$$\\ $$  _____|",  
+" $$$$$$$ |$$ |$$ /  $$ |$$ /  $$ |$$ |  \\__|$$ |  $$ |    $$ / $$ / $$ |$$ /  $$ |\\$$$$$$\\  ", 
+"$$  __$$ |$$ |$$ |  $$ |$$ |  $$ |$$ |      $$ |  $$ |$$\\ $$ | $$ | $$ |$$ |  $$ | \\____$$\\ ",
+"\\$$$$$$$ |$$ |\\$$$$$$$ |\\$$$$$$  |$$ |      $$ |  \\$$$$  |$$ | $$ | $$ |\\$$$$$$  |$$$$$$$  |",
+" \\_______|\\__| \\____$$ | \\______/ \\__|      \\__|   \\____/ \\__| \\__| \\__| \\______/ \\_______/ ",
+"              $$\\   $$ |                                                                    ",
+"              \\$$$$$$  |                                                                    ",
+"               \\______/  "
+    };
+    //Escribir la palabra en consola con gotoxy
+    int x = 100;
+    int y = 40;
+    for(int i = 0; i <= 10; i++){
+        gotoxy(x,y);
+        cout<<palabra[i];
+        y++;
+    }
+
+
 }
 
 
