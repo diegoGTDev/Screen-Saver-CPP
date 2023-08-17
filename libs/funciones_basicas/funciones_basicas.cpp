@@ -45,8 +45,10 @@ void escribirAlgoritmos(){
 "               \\______/  "
     };
     //Escribir la palabra en consola con gotoxy
-    int x = 100;
-    int y = 40;
+    int x = MAX_X_MARCO;
+    int y = MAX_Y_MARCO;
+    x = x/2-45;
+    y = y/2;
     for(int i = 0; i <= 10; i++){
         gotoxy(x,y);
         cout<<palabra[i];

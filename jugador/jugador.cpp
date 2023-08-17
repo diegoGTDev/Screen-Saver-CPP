@@ -58,7 +58,7 @@ void JUGADOR::saltar(){
 }
 void JUGADOR::preColision(struct ROCA &ROCA){
     
-    if (x+1 >= ROCA.getX() && x < ROCA.getX()){
+    if (x >= ROCA.getX()-2 && x <= ROCA.getX()-2){
         saltar();
     }
 }
