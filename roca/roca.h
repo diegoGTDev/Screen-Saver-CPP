@@ -1,24 +1,22 @@
-
+#include "../libs/constantes.h"
 class ROCA{ 
   public:
     
     ROCA(int _x, int _y){
       x = _x;
       y = _y;
-      inicialX = _x;
+      inicialX = MAX_X_MARCO;
       inicialY = _y;
-      state = false;
+
     }
     void dibujar();
     void mover();
     void estaEnLimite();
-    void borrarEnLimite();
     void crearOtraRoca(struct ROCA &roca);
-    bool getState();
     int getX();
+    void setX(int _x);
     private:
       int x, y;
-      bool state;
       int inicialX, inicialY;
       
 

@@ -36,11 +36,10 @@ void ROCA::crearOtraRoca(struct ROCA &ROCA){
     const int _MAX_X = MAX_X
     if (ROCA.getX() < _MAX_X-40){
         dibujar();
-        state = true;
+
     }
 }
 
-bool ROCA::getState(){
-    return state;
+void ROCA::setX(int _x){
+    inicialX = _x;
 }
-
